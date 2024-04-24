@@ -1,12 +1,12 @@
-package com.jetbrains.kmpapp.di
+package com.nameisjayant.kmpapp.mesume.di
 
-import com.jetbrains.kmpapp.data.InMemoryMuseumStorage
-import com.jetbrains.kmpapp.data.KtorMuseumApi
-import com.jetbrains.kmpapp.data.MuseumApi
-import com.jetbrains.kmpapp.data.MuseumRepository
-import com.jetbrains.kmpapp.data.MuseumStorage
-import com.jetbrains.kmpapp.screens.detail.DetailScreenModel
-import com.jetbrains.kmpapp.screens.list.ListScreenModel
+import com.nameisjayant.kmpapp.mesume.data.InMemoryMuseumStorage
+import com.nameisjayant.kmpapp.mesume.data.KtorMuseumApi
+import com.nameisjayant.kmpapp.mesume.data.MuseumApi
+import com.nameisjayant.kmpapp.mesume.data.MuseumRepository
+import com.nameisjayant.kmpapp.mesume.data.MuseumStorage
+import com.nameisjayant.kmpapp.mesume.screens.detail.DetailScreenModel
+import com.nameisjayant.kmpapp.mesume.screens.list.ListScreenModel
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.http.ContentType

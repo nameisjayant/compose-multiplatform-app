@@ -1,4 +1,4 @@
-package com.jetbrains.kmpapp.screens.list
+package com.nameisjayant.kmpapp.mesume.screens.list
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.background
@@ -29,9 +29,9 @@ import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.getScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import com.jetbrains.kmpapp.data.MuseumObject
-import com.jetbrains.kmpapp.screens.EmptyScreenContent
-import com.jetbrains.kmpapp.screens.detail.DetailScreen
+import com.nameisjayant.kmpapp.mesume.data.MuseumObject
+import com.nameisjayant.kmpapp.mesume.screens.EmptyScreenContent
+import com.nameisjayant.kmpapp.mesume.screens.detail.DetailScreen
 import io.kamel.image.KamelImage
 import io.kamel.image.asyncPainterResource
 

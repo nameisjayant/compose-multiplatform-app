@@ -1,4 +1,4 @@
-package com.jetbrains.kmpapp.screens
+package com.nameisjayant.kmpapp.mesume.screens
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material.Text
