@@ -2,12 +2,11 @@ package com.nameisjayant.kmpapp
 
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
-import cafe.adriel.voyager.navigator.Navigator
-import com.nameisjayant.kmpapp.mesume.screens.list.ListScreen
+import com.nameisjayant.kmpapp.jsonplaceholder.feature.ui.screens.PostScreen
 
 @Composable
 fun App() {
     MaterialTheme {
-        Navigator(ListScreen)
+        PostScreen()
     }
 }
