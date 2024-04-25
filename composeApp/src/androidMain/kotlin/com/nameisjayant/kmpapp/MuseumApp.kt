@@ -1,7 +1,7 @@
 package com.nameisjayant.kmpapp
 
 import android.app.Application
-import com.nameisjayant.kmpapp.di.initKoin
+import com.nameisjayant.kmpapp.api.di.initKoin
 
 class MuseumApp : Application() {
     override fun onCreate() {

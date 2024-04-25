@@ -1,4 +1,4 @@
-package com.nameisjayant.kmpapp.jsonplaceholder.data.modal
+package com.nameisjayant.kmpapp.api.data.modal
 
 import kotlinx.serialization.Serializable
 
