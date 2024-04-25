@@ -1,6 +1,6 @@
-package com.nameisjayant.kmpapp.di
+package com.nameisjayant.kmpapp.api.di
 
-import com.nameisjayant.kmpapp.jsonplaceholder.data.network.PostApiService
+import com.nameisjayant.kmpapp.api.data.network.PostApiService
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.http.ContentType
@@ -14,7 +14,6 @@ val dataModule = module {
         val json = Json { ignoreUnknownKeys = true }
         HttpClient {
             install(ContentNegotiation) {
-                // TODO Fix API so it serves application/json
                 json(json, contentType = ContentType.Any)
             }
         }

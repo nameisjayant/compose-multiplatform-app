@@ -1,6 +1,6 @@
-package com.nameisjayant.kmpapp.jsonplaceholder.data.network
+package com.nameisjayant.kmpapp.api.data.network
 
-import com.nameisjayant.kmpapp.jsonplaceholder.data.modal.Post
+import com.nameisjayant.kmpapp.api.data.modal.Post
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get

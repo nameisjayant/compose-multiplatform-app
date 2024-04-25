@@ -1,4 +1,4 @@
-package com.nameisjayant.kmpapp.jsonplaceholder.feature.ui.viewmodel.factory
+package com.nameisjayant.kmpapp.api.feature.ui.viewmodel.factory
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -11,7 +11,7 @@ import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.nameisjayant.kmpapp.KMPApp
-import com.nameisjayant.kmpapp.jsonplaceholder.feature.ui.viewmodel.PostViewModel
+import com.nameisjayant.kmpapp.api.feature.ui.viewmodel.PostViewModel
 import kotlin.reflect.KClass
 
 

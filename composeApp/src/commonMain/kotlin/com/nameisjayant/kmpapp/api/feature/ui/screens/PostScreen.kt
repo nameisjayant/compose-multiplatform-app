@@ -1,4 +1,4 @@
-package com.nameisjayant.kmpapp.jsonplaceholder.feature.ui.screens
+package com.nameisjayant.kmpapp.api.feature.ui.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -22,10 +22,10 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.nameisjayant.kmpapp.jsonplaceholder.data.modal.Post
-import com.nameisjayant.kmpapp.jsonplaceholder.feature.ui.viewmodel.PostViewModel
-import com.nameisjayant.kmpapp.jsonplaceholder.feature.ui.viewmodel.events.PostEvent
-import com.nameisjayant.kmpapp.jsonplaceholder.feature.ui.viewmodel.factory.viewModels
+import com.nameisjayant.kmpapp.api.data.modal.Post
+import com.nameisjayant.kmpapp.api.feature.ui.viewmodel.PostViewModel
+import com.nameisjayant.kmpapp.api.feature.ui.viewmodel.events.PostEvent
+import com.nameisjayant.kmpapp.api.feature.ui.viewmodel.factory.viewModels
 
 
 @Composable

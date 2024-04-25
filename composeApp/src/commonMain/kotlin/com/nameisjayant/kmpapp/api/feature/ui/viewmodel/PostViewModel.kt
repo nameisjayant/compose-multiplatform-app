@@ -1,11 +1,11 @@
-package com.nameisjayant.kmpapp.jsonplaceholder.feature.ui.viewmodel
+package com.nameisjayant.kmpapp.api.feature.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.nameisjayant.kmpapp.jsonplaceholder.data.modal.Post
-import com.nameisjayant.kmpapp.jsonplaceholder.data.network.PostApiService
-import com.nameisjayant.kmpapp.jsonplaceholder.feature.ui.viewmodel.events.PostEvent
-import com.nameisjayant.kmpapp.jsonplaceholder.feature.ui.viewmodel.states.PostStates
+import com.nameisjayant.kmpapp.api.data.modal.Post
+import com.nameisjayant.kmpapp.api.data.network.PostApiService
+import com.nameisjayant.kmpapp.api.feature.ui.viewmodel.events.PostEvent
+import com.nameisjayant.kmpapp.api.feature.ui.viewmodel.states.PostStates
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
