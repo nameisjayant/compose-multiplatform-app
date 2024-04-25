@@ -22,18 +22,15 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.nameisjayant.kmpapp.jsonplaceholder.data.modal.Post
 import com.nameisjayant.kmpapp.jsonplaceholder.feature.ui.viewmodel.PostViewModel
 import com.nameisjayant.kmpapp.jsonplaceholder.feature.ui.viewmodel.events.PostEvent
+import com.nameisjayant.kmpapp.jsonplaceholder.feature.ui.viewmodel.factory.viewModels
 
 
 @Composable
 fun PostScreen(
-    viewModel: PostViewModel = viewModel(
-        factory = PostViewModel.Factory,
-        modelClass = PostViewModel::class
-    )
+    viewModel: PostViewModel = viewModels(modelClass = PostViewModel::class)
 ) {
     val response by viewModel.postEventFlow.collectAsState()
 
@@ -92,7 +89,6 @@ private fun PostEachRow(
             "${data.body}", style = TextStyle(
                 color = Color.Gray,
                 fontSize = 14.sp,
-                fontWeight = FontWeight.W700
             )
         )
     }

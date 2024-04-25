@@ -52,8 +52,8 @@ kotlin {
             implementation(libs.voyager.navigator)
             implementation(libs.voyager.koin)
 
-            // compose view model lifecycle
             implementation(libs.compose.viewmodel)
+            implementation(libs.compose.navigaition)
         }
     }
 }
