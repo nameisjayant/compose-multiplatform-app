@@ -54,6 +54,7 @@ kotlin {
 
             implementation(libs.compose.viewmodel)
             implementation(libs.compose.navigaition)
+            implementation(libs.accompanist.permissions)
         }
     }
 }
