@@ -21,11 +21,11 @@
 
 <p align="center">
 <video width="640" height="360" controls>
-        <source src="screenshots/android_image_picker.mp4" type="video/quicktime">
+        <source src="screenshots/android_image_picker.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 <video width="640" height="360" controls>
-        <source src="screenshots/ios_image_pickers.mp4" type="video/quicktime">
+        <source src="screenshots/ios_image_pickers.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 </p>
