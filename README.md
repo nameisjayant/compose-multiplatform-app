@@ -25,8 +25,14 @@
     <th>IOS</th>
   </tr>
   <tr>
-    <td><Video src="screenshots/android_image_picker.mov" height="600" alt="android_image_picker"></Video></td>
-    <td><video src="screenshots/ios_image_pickers.mov" height="600" alt="ios_image_picker"></video></td>
+    <td><video width="640" height="360" controls>
+        <source src="screenshots/android_image_picker.mov" type="video/quicktime">
+        Your browser does not support the video tag.
+    </video></td>
+    <td><video width="640" height="360" controls>
+        <source src="screenshots/ios_image_pickers.mov" type="video/quicktime">
+        Your browser does not support the video tag.
+    </video></td>
   </tr>
 </table>
 
