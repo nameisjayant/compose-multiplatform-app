@@ -19,22 +19,16 @@
 
 ### Image Picker App In CMP
 
-<table style="width:100%">
-  <tr>
-    <th>Android</th>
-    <th>IOS</th>
-  </tr>
-  <tr>
-    <td><video width="640" height="360" controls>
+<p align="center">
+<video width="640" height="360" controls>
         <source src="screenshots/android_image_picker.mp4" type="video/quicktime">
         Your browser does not support the video tag.
-    </video></td>
-    <td><video width="640" height="360" controls>
+    </video>
+<video width="640" height="360" controls>
         <source src="screenshots/ios_image_pickers.mp4" type="video/quicktime">
         Your browser does not support the video tag.
-    </video></td>
-  </tr>
-</table>
+    </video>
+</p>
 
 ## Find this project useful ? ❤️
 
