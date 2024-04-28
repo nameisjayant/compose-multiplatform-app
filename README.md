@@ -18,17 +18,17 @@
 </table>
 
 ### Image Picker App In CMP
-
 <table style="width:100%">
   <tr>
     <th>Android</th>
     <th>IOS</th>
   </tr>
   <tr>
-    <td><Video src="screenshots/android_image_picker.mov" height="600" alt="android_image_picker"></Video></td>
-    <td><video src="screenshots/ios_image_pickers.mov" height="600" alt="ios_image_picker"></video></td>
+    <td><img src="screenshots/android_image_picker.gif" height="600" alt="image_picker_android"/></td>
+    <td><img src="screenshots/images_picker_ios.gif" height="600" alt="image_picker_ios"/></td>
   </tr>
 </table>
+
 
 ## Find this project useful ? ❤️
 
