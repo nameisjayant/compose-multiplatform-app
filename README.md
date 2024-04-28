@@ -26,11 +26,11 @@
   </tr>
   <tr>
     <td><video width="640" height="360" controls>
-        <source src="screenshots/android_image_picker.mov" type="video/quicktime">
+        <source src="screenshots/android_image_picker.mp4" type="video/quicktime">
         Your browser does not support the video tag.
     </video></td>
     <td><video width="640" height="360" controls>
-        <source src="screenshots/ios_image_pickers.mov" type="video/quicktime">
+        <source src="screenshots/ios_image_pickers.mp4" type="video/quicktime">
         Your browser does not support the video tag.
     </video></td>
   </tr>
