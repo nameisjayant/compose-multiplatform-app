@@ -4,7 +4,7 @@
 
 ## 🖥️ Screenshots
 
-### API Calling with Ktor and MVVM
+### API Calling with Ktor and MVVM In CMP
 
 <table style="width:100%">
   <tr>
@@ -14,6 +14,19 @@
   <tr>
     <td><img src="screenshots/api_android.png" height="600" alt="api_android"/></td>
     <td><img src="screenshots/api_ios.png" height="600" alt="api_ios"/></td>
+  </tr>
+</table>
+
+### Image Picker App In CMP
+
+<table style="width:100%">
+  <tr>
+    <th>Android</th>
+    <th>IOS</th>
+  </tr>
+  <tr>
+    <td><Video src="screenshots/android_image_picker.mov" height="600" alt="android_image_picker"></Video></td>
+    <td><video src="screenshots/ios_image_pickers.mov" height="600" alt="ios_image_picker"></video></td>
   </tr>
 </table>
 

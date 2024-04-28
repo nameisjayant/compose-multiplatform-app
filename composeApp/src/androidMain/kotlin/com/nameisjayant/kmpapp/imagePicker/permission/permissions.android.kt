@@ -89,5 +89,3 @@ actual class PermissionManager actual constructor(private val callback: Permissi
 actual fun createPermissionsManager(callback: PermissionCallback): PermissionManager {
     return remember { PermissionManager(callback) }
 }
-
-
