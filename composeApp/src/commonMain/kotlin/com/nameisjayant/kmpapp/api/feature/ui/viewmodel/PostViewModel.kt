@@ -17,6 +17,14 @@ class PostViewModel(
     var postEventFlow = _postEventFlow.asStateFlow()
         private set
 
+    private val _postData: MutableStateFlow<Post?> = MutableStateFlow(null)
+    var postData = _postData.asStateFlow()
+        private set
+
+    fun setPostData(data: Post) {
+        _postData.value = data
+    }
+
     fun onEvent(event: PostEvent) = viewModelScope.launch {
         when (event) {
             PostEvent.GetPostEvent -> {
