@@ -1,5 +1,6 @@
 package com.nameisjayant.kmpapp.api.feature.ui.screens
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
@@ -22,7 +23,9 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.nameisjayant.kmpapp.api.data.modal.Post
+import com.nameisjayant.kmpapp.api.feature.navigation.PostRoutes
 import com.nameisjayant.kmpapp.api.feature.ui.viewmodel.PostViewModel
 import com.nameisjayant.kmpapp.api.feature.ui.viewmodel.events.PostEvent
 import com.nameisjayant.kmpapp.api.feature.ui.viewmodel.factory.viewModels
@@ -30,7 +33,8 @@ import com.nameisjayant.kmpapp.api.feature.ui.viewmodel.factory.viewModels
 
 @Composable
 fun PostScreen(
-    viewModel: PostViewModel = viewModels(modelClass = PostViewModel::class)
+    viewModel: PostViewModel,
+    navHostController: NavHostController
 ) {
     val response by viewModel.postEventFlow.collectAsState()
 
@@ -55,7 +59,10 @@ fun PostScreen(
         }
         if (response.data.isNotEmpty()) {
             items(response.data, key = { it.id ?: it.hashCode() }) {
-                PostEachRow(data = it)
+                PostEachRow(data = it) {
+                    viewModel.setPostData(it)
+                    navHostController.navigate(PostRoutes.PostDetails)
+                }
             }
         }
         if (response.isLoading)
@@ -72,10 +79,13 @@ fun PostScreen(
 @Composable
 private fun PostEachRow(
     modifier: Modifier = Modifier,
-    data: Post
+    data: Post,
+    onClick: () -> Unit
 ) {
     Column(
-        modifier = modifier.fillMaxWidth().padding(top = 20.dp)
+        modifier = modifier.fillMaxWidth().padding(top = 20.dp).clickable {
+            onClick()
+        }
     ) {
         Text(
             "${data.title}", style = TextStyle(
