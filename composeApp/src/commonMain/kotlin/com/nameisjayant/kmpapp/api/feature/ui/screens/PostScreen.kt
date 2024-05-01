@@ -13,16 +13,21 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.NavHostController
 import com.nameisjayant.kmpapp.api.data.modal.Post
 import com.nameisjayant.kmpapp.api.feature.navigation.PostRoutes
@@ -37,8 +42,9 @@ fun PostScreen(
     navHostController: NavHostController
 ) {
     val response by viewModel.postEventFlow.collectAsState()
+    val lifecycleOwner = LocalLifecycleOwner.current
 
-    LaunchedEffect(Unit) {
+    LifecycleEvent(lifecycleOwner){
         viewModel.onEvent(PostEvent.GetPostEvent)
     }
 
@@ -73,6 +79,28 @@ fun PostScreen(
             item {
                 Text(response.error)
             }
+    }
+}
+
+@Composable
+private fun LifecycleEvent(
+    lifecycleOwner: LifecycleOwner,
+    onEvent:()->Unit
+) {
+    DisposableEffect(lifecycleOwner) {
+        val observer = LifecycleEventObserver { _, event ->
+            when (event) {
+                Lifecycle.Event.ON_START -> {
+                    onEvent()
+                }
+
+                else -> {}
+            }
+        }
+        lifecycleOwner.lifecycle.addObserver(observer)
+        onDispose {
+            lifecycleOwner.lifecycle.removeObserver(observer)
+        }
     }
 }
 
