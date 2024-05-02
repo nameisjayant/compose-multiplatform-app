@@ -13,7 +13,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.AlertDialog
@@ -31,7 +30,6 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -50,6 +48,7 @@ import com.nameisjayant.kmpapp.imagePicker.permission.PermissionCallback
 import com.nameisjayant.kmpapp.imagePicker.permission.PermissionStatus
 import com.nameisjayant.kmpapp.imagePicker.permission.PermissionType
 import com.nameisjayant.kmpapp.imagePicker.permission.createPermissionsManager
+import com.nameisjayant.kmpapp.ui.interFont
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -102,7 +101,10 @@ fun ShowImagesScreen() {
             ) {
                 Text(
                     "Image Picker App", style = TextStyle(
-                        fontSize = 20.sp, color = Color.Black, fontWeight = FontWeight.Bold
+                        fontSize = 20.sp,
+                        color = Color.Black,
+                        fontWeight = FontWeight.Bold,
+                        fontFamily = interFont
                     )
                 )
             }
@@ -207,16 +209,24 @@ private fun ChooseDialog(
         Column(
             modifier = Modifier.padding(16.dp)
         ) {
-            ClickableText(AnnotatedString("Gallery"), onClick = onGalleryClick)
+            ClickableText(
+                AnnotatedString("Gallery"), onClick = onGalleryClick, style = TextStyle(
+                    fontFamily = interFont
+                )
+            )
             Spacer(modifier = Modifier.height(16.dp))
-            ClickableText(AnnotatedString("Camera"), onClick = onCameraClick)
+            ClickableText(
+                AnnotatedString("Camera"), onClick = onCameraClick, style = TextStyle(
+                    fontFamily = interFont
+                )
+            )
         }
     }, modifier.fillMaxWidth(), shape = RoundedCornerShape(8.dp), title = {
         Box(
             modifier = Modifier.fillMaxWidth(),
             contentAlignment = Alignment.Center
         ) {
-            Text("Choose from")
+            Text("Choose from", fontFamily = interFont)
         }
     })
 }
@@ -240,11 +250,11 @@ private fun OpenSettingDialog(
                     contentColor = Color.White
                 )
             ) {
-                Text("Cancel")
+                Text("Cancel", fontFamily = interFont)
             }
             Spacer(modifier = Modifier.width(10.dp))
             Button(onClick = onOpenSetting, modifier = Modifier.weight(0.5f)) {
-                Text("Open Setting")
+                Text("Open Setting", fontFamily = interFont)
             }
         }
     }, modifier = modifier.fillMaxWidth(), shape = RoundedCornerShape(8.dp),
@@ -253,7 +263,7 @@ private fun OpenSettingDialog(
                 modifier = Modifier.fillMaxWidth(),
                 contentAlignment = Alignment.Center
             ) {
-                Text("Alert")
+                Text("Alert", fontFamily = interFont)
             }
         },
         text = {
@@ -261,7 +271,11 @@ private fun OpenSettingDialog(
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
                 contentAlignment = Alignment.Center
             ) {
-                Text("Please grant the permission from the setting", textAlign = TextAlign.Center)
+                Text(
+                    "Please grant the permission from the setting",
+                    textAlign = TextAlign.Center,
+                    fontFamily = interFont
+                )
             }
         }
     )

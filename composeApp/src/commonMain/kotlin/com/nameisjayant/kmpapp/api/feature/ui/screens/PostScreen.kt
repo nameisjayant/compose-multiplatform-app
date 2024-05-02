@@ -14,7 +14,6 @@ import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -33,7 +32,10 @@ import com.nameisjayant.kmpapp.api.data.modal.Post
 import com.nameisjayant.kmpapp.api.feature.navigation.PostRoutes
 import com.nameisjayant.kmpapp.api.feature.ui.viewmodel.PostViewModel
 import com.nameisjayant.kmpapp.api.feature.ui.viewmodel.events.PostEvent
-import com.nameisjayant.kmpapp.api.feature.ui.viewmodel.factory.viewModels
+import com.nameisjayant.kmpapp.ui.interFont
+import kmp_app_template.composeapp.generated.resources.Res
+import kmp_app_template.composeapp.generated.resources.posts
+import org.jetbrains.compose.resources.stringResource
 
 
 @Composable
@@ -44,7 +46,7 @@ fun PostScreen(
     val response by viewModel.postEventFlow.collectAsState()
     val lifecycleOwner = LocalLifecycleOwner.current
 
-    LifecycleEvent(lifecycleOwner){
+    LifecycleEvent(lifecycleOwner) {
         viewModel.onEvent(PostEvent.GetPostEvent)
     }
 
@@ -56,10 +58,11 @@ fun PostScreen(
         item {
             Spacer(modifier = Modifier.height(10.dp))
             Text(
-                "Posts", style = TextStyle(
+                stringResource(Res.string.posts), style = TextStyle(
                     color = Color.Black,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 24.sp
+                    fontSize = 24.sp,
+                    fontFamily = interFont
                 )
             )
         }
@@ -85,7 +88,7 @@ fun PostScreen(
 @Composable
 private fun LifecycleEvent(
     lifecycleOwner: LifecycleOwner,
-    onEvent:()->Unit
+    onEvent: () -> Unit
 ) {
     DisposableEffect(lifecycleOwner) {
         val observer = LifecycleEventObserver { _, event ->
@@ -119,7 +122,8 @@ private fun PostEachRow(
             "${data.title}", style = TextStyle(
                 color = Color.Black,
                 fontSize = 20.sp,
-                fontWeight = FontWeight.W700
+                fontWeight = FontWeight.W700,
+                fontFamily = interFont
             )
         )
         Spacer(modifier = Modifier.height(5.dp))
@@ -127,6 +131,7 @@ private fun PostEachRow(
             "${data.body}", style = TextStyle(
                 color = Color.Gray,
                 fontSize = 14.sp,
+                fontFamily = interFont
             )
         )
     }
