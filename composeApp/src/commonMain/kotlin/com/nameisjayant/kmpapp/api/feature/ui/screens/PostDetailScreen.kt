@@ -7,12 +7,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -26,6 +24,15 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.nameisjayant.kmpapp.api.data.modal.Post
 import com.nameisjayant.kmpapp.api.feature.ui.viewmodel.PostViewModel
+import com.nameisjayant.kmpapp.ui.interFont
+import com.nameisjayant.kmpapp.utils.Constant
+import com.nameisjayant.kmpapp.version.getPlatformName
+import kmp_app_template.composeapp.generated.resources.Res
+import kmp_app_template.composeapp.generated.resources.arrow
+import kmp_app_template.composeapp.generated.resources.arrow_back
+import kmp_app_template.composeapp.generated.resources.post_details
+import org.jetbrains.compose.resources.stringResource
+import org.jetbrains.compose.resources.vectorResource
 
 
 @Composable
@@ -44,26 +51,27 @@ fun PostDetailScreen(
                 navHostController.navigateUp()
             }) {
                 Icon(
-                    Icons.AutoMirrored.Filled.ArrowBack,
+                    imageVector = vectorResource(if (getPlatformName() == Constant.IOS) Res.drawable.arrow else Res.drawable.arrow_back),
                     contentDescription = null,
-                    tint = Color.Black
+                    tint = Color.Black,
+                    modifier = Modifier.size(30.dp)
                 )
             }
-            Spacer(modifier = Modifier.width(10.dp))
             Text(
-                "Posts Detail", style = TextStyle(
+                stringResource(Res.string.post_details), style = TextStyle(
                     color = Color.Black,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 24.sp
+                    fontSize = 24.sp,
+                    fontFamily = interFont
                 )
             )
         }
         response?.let {
-           Column(
-               modifier = Modifier.padding(horizontal = 10.dp)
-           ) {
-               PostData(data = it)
-           }
+            Column(
+                modifier = Modifier.padding(horizontal = 10.dp)
+            ) {
+                PostData(data = it)
+            }
         }
     }
 
@@ -81,7 +89,8 @@ private fun PostData(
             "${data.id}", style = TextStyle(
                 color = Color.Black,
                 fontSize = 20.sp,
-                fontWeight = FontWeight.W700
+                fontWeight = FontWeight.W700,
+                fontFamily = interFont
             )
         )
         Spacer(modifier = Modifier.height(5.dp))
@@ -89,7 +98,8 @@ private fun PostData(
             "${data.title}", style = TextStyle(
                 color = Color.Black,
                 fontSize = 20.sp,
-                fontWeight = FontWeight.W700
+                fontWeight = FontWeight.W700,
+                fontFamily = interFont
             )
         )
         Spacer(modifier = Modifier.height(5.dp))
@@ -97,6 +107,7 @@ private fun PostData(
             "${data.body}", style = TextStyle(
                 color = Color.Gray,
                 fontSize = 14.sp,
+                fontFamily = interFont
             )
         )
     }

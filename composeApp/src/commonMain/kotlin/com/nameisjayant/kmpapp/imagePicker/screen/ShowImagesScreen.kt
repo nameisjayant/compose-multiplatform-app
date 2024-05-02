@@ -13,7 +13,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.AlertDialog
@@ -31,7 +30,6 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -50,9 +48,20 @@ import com.nameisjayant.kmpapp.imagePicker.permission.PermissionCallback
 import com.nameisjayant.kmpapp.imagePicker.permission.PermissionStatus
 import com.nameisjayant.kmpapp.imagePicker.permission.PermissionType
 import com.nameisjayant.kmpapp.imagePicker.permission.createPermissionsManager
+import com.nameisjayant.kmpapp.ui.interFont
+import kmp_app_template.composeapp.generated.resources.Res
+import kmp_app_template.composeapp.generated.resources.alert
+import kmp_app_template.composeapp.generated.resources.camera
+import kmp_app_template.composeapp.generated.resources.cancel
+import kmp_app_template.composeapp.generated.resources.choose_from
+import kmp_app_template.composeapp.generated.resources.gallery
+import kmp_app_template.composeapp.generated.resources.grant_permission
+import kmp_app_template.composeapp.generated.resources.image_picker_app
+import kmp_app_template.composeapp.generated.resources.open_setting
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.jetbrains.compose.resources.stringResource
 
 
 @Composable
@@ -101,8 +110,11 @@ fun ShowImagesScreen() {
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    "Image Picker App", style = TextStyle(
-                        fontSize = 20.sp, color = Color.Black, fontWeight = FontWeight.Bold
+                    stringResource(Res.string.image_picker_app), style = TextStyle(
+                        fontSize = 20.sp,
+                        color = Color.Black,
+                        fontWeight = FontWeight.Bold,
+                        fontFamily = interFont
                     )
                 )
             }
@@ -207,16 +219,28 @@ private fun ChooseDialog(
         Column(
             modifier = Modifier.padding(16.dp)
         ) {
-            ClickableText(AnnotatedString("Gallery"), onClick = onGalleryClick)
+            ClickableText(
+                AnnotatedString(stringResource(Res.string.gallery)),
+                onClick = onGalleryClick,
+                style = TextStyle(
+                    fontFamily = interFont
+                )
+            )
             Spacer(modifier = Modifier.height(16.dp))
-            ClickableText(AnnotatedString("Camera"), onClick = onCameraClick)
+            ClickableText(
+                AnnotatedString(stringResource(Res.string.camera)),
+                onClick = onCameraClick,
+                style = TextStyle(
+                    fontFamily = interFont
+                )
+            )
         }
     }, modifier.fillMaxWidth(), shape = RoundedCornerShape(8.dp), title = {
         Box(
             modifier = Modifier.fillMaxWidth(),
             contentAlignment = Alignment.Center
         ) {
-            Text("Choose from")
+            Text(stringResource(Res.string.choose_from), fontFamily = interFont)
         }
     })
 }
@@ -240,11 +264,11 @@ private fun OpenSettingDialog(
                     contentColor = Color.White
                 )
             ) {
-                Text("Cancel")
+                Text(stringResource(Res.string.cancel), fontFamily = interFont)
             }
             Spacer(modifier = Modifier.width(10.dp))
             Button(onClick = onOpenSetting, modifier = Modifier.weight(0.5f)) {
-                Text("Open Setting")
+                Text(stringResource(Res.string.open_setting), fontFamily = interFont)
             }
         }
     }, modifier = modifier.fillMaxWidth(), shape = RoundedCornerShape(8.dp),
@@ -253,7 +277,7 @@ private fun OpenSettingDialog(
                 modifier = Modifier.fillMaxWidth(),
                 contentAlignment = Alignment.Center
             ) {
-                Text("Alert")
+                Text(stringResource(Res.string.alert), fontFamily = interFont)
             }
         },
         text = {
@@ -261,7 +285,11 @@ private fun OpenSettingDialog(
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
                 contentAlignment = Alignment.Center
             ) {
-                Text("Please grant the permission from the setting", textAlign = TextAlign.Center)
+                Text(
+                    stringResource(Res.string.grant_permission),
+                    textAlign = TextAlign.Center,
+                    fontFamily = interFont
+                )
             }
         }
     )

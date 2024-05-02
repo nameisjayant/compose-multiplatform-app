@@ -8,9 +8,16 @@
     <string name="label_department">Department</string>
     <string name="label_repository">Repository</string>
     <string name="label_credits">Credits</string>
-
     <string name="back">Back</string>
-
     <string name="no_data_available">No data available</string>
     <string name="posts">Posts</string>
+    <string name="post_details">Posts Detail</string>
+    <string name="image_picker_app">Image Picker App</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="choose_from">Choose From</string>
+    <string name="cancel">Cancel</string>
+    <string name="open_setting">Open Setting</string>
+    <string name="alert">Alert</string>
+    <string name="grant_permission">Please grant the permission from the setting</string>
 </resources>
