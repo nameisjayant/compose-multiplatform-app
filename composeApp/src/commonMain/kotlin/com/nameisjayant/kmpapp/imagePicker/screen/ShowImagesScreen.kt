@@ -49,9 +49,19 @@ import com.nameisjayant.kmpapp.imagePicker.permission.PermissionStatus
 import com.nameisjayant.kmpapp.imagePicker.permission.PermissionType
 import com.nameisjayant.kmpapp.imagePicker.permission.createPermissionsManager
 import com.nameisjayant.kmpapp.ui.interFont
+import kmp_app_template.composeapp.generated.resources.Res
+import kmp_app_template.composeapp.generated.resources.alert
+import kmp_app_template.composeapp.generated.resources.camera
+import kmp_app_template.composeapp.generated.resources.cancel
+import kmp_app_template.composeapp.generated.resources.choose_from
+import kmp_app_template.composeapp.generated.resources.gallery
+import kmp_app_template.composeapp.generated.resources.grant_permission
+import kmp_app_template.composeapp.generated.resources.image_picker_app
+import kmp_app_template.composeapp.generated.resources.open_setting
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.jetbrains.compose.resources.stringResource
 
 
 @Composable
@@ -100,7 +110,7 @@ fun ShowImagesScreen() {
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    "Image Picker App", style = TextStyle(
+                    stringResource(Res.string.image_picker_app), style = TextStyle(
                         fontSize = 20.sp,
                         color = Color.Black,
                         fontWeight = FontWeight.Bold,
@@ -210,13 +220,17 @@ private fun ChooseDialog(
             modifier = Modifier.padding(16.dp)
         ) {
             ClickableText(
-                AnnotatedString("Gallery"), onClick = onGalleryClick, style = TextStyle(
+                AnnotatedString(stringResource(Res.string.gallery)),
+                onClick = onGalleryClick,
+                style = TextStyle(
                     fontFamily = interFont
                 )
             )
             Spacer(modifier = Modifier.height(16.dp))
             ClickableText(
-                AnnotatedString("Camera"), onClick = onCameraClick, style = TextStyle(
+                AnnotatedString(stringResource(Res.string.camera)),
+                onClick = onCameraClick,
+                style = TextStyle(
                     fontFamily = interFont
                 )
             )
@@ -226,7 +240,7 @@ private fun ChooseDialog(
             modifier = Modifier.fillMaxWidth(),
             contentAlignment = Alignment.Center
         ) {
-            Text("Choose from", fontFamily = interFont)
+            Text(stringResource(Res.string.choose_from), fontFamily = interFont)
         }
     })
 }
@@ -250,11 +264,11 @@ private fun OpenSettingDialog(
                     contentColor = Color.White
                 )
             ) {
-                Text("Cancel", fontFamily = interFont)
+                Text(stringResource(Res.string.cancel), fontFamily = interFont)
             }
             Spacer(modifier = Modifier.width(10.dp))
             Button(onClick = onOpenSetting, modifier = Modifier.weight(0.5f)) {
-                Text("Open Setting", fontFamily = interFont)
+                Text(stringResource(Res.string.open_setting), fontFamily = interFont)
             }
         }
     }, modifier = modifier.fillMaxWidth(), shape = RoundedCornerShape(8.dp),
@@ -263,7 +277,7 @@ private fun OpenSettingDialog(
                 modifier = Modifier.fillMaxWidth(),
                 contentAlignment = Alignment.Center
             ) {
-                Text("Alert", fontFamily = interFont)
+                Text(stringResource(Res.string.alert), fontFamily = interFont)
             }
         },
         text = {
@@ -272,7 +286,7 @@ private fun OpenSettingDialog(
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    "Please grant the permission from the setting",
+                    stringResource(Res.string.grant_permission),
                     textAlign = TextAlign.Center,
                     fontFamily = interFont
                 )

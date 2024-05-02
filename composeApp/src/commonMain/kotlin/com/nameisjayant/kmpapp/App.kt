@@ -9,7 +9,7 @@ import com.nameisjayant.kmpapp.ui.KMPAppTemplate
 @Composable
 fun App() = withViewModelStoreOwner {
     KMPAppTemplate {
-       PostNavigation()
-      //  ShowImagesScreen()
+       //PostNavigation()
+        ShowImagesScreen()
     }
 }
